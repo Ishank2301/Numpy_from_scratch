@@ -1,18 +1,24 @@
 import numpy as np
-rng = np.random.default_rng() # seed used to present the same results
-print(rng.integers(low=1,high=7, size= (3,2)))
 
 
-#How to produce random float numbaers:
-print(np.random.uniform(low=-1, high=1, size =3))
+def show(label, value):
+    print(f"{label}: {value}")
 
-#How to shuffle an array:
 
-array =  np.array([1,2,3,4,5])
-rng.shuffle(array)
-print(array)
+def main():
+    rng = np.random.default_rng(seed=2026)
 
-# Random choice
-arr = np.array(["apple=🍎", "banana=🍌", "Orange=🍊", "coconut=🥥", "PineApple=🍍"])
-arr = rng.choice(arr, size =(3, 4))
-print(arr)
+    show("dice rolls", rng.integers(low=1, high=7, size=(3, 2)))
+    show("random floats", rng.uniform(low=-1, high=1, size=3))
+
+    numbers = np.array([1, 2, 3, 4, 5])
+    rng.shuffle(numbers)
+    show("shuffled numbers", numbers)
+
+    fruits = np.array(["apple", "banana", "orange", "coconut", "pineapple"])
+    choices = rng.choice(fruits, size=(3, 4))
+    show("fruit choices", choices)
+
+
+if __name__ == "__main__":
+    main()
