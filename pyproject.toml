@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "numpy-from-scratch-notes"
+version = "0.1.0"
+description = "Small NumPy learning scripts for array basics, indexing, broadcasting, filtering, and random numbers."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.setuptools]
+py-modules = []
